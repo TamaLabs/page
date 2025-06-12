@@ -33,6 +33,51 @@
       padding: 80px 40px;
     }
 
+    /* --- Pulsing Neuron Icon --- */
+    .dynamic-icon {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .icon-core {
+      width: 10px;
+      height: 10px;
+      background-color: #333;
+      border-radius: 50%;
+      position: relative;
+    }
+    
+    .icon-core::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 1px solid #999;
+        animation: pulse 2.5s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+      }
+      70% {
+        transform: translate(-50%, -50%) scale(5);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(5);
+        opacity: 0;
+      }
+    }
+
+
     /* Header - Ultra minimal */
     header {
       margin-bottom: 120px;
@@ -304,6 +349,11 @@
 <body>
   <div class="container">
     <header>
+      <!-- Pulsing Neuron Icon -->
+      <div class="dynamic-icon">
+        <div class="icon-core"></div>
+      </div>
+      
       <h1>Tama Labs</h1>
       <p class="subtitle"> <strong>t</strong>ransformative <strong>a</strong>rtificial <strong>m</strong>ind <strong>a</strong>rchitectures</p>
     </header>
