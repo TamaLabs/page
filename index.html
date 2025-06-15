@@ -142,6 +142,50 @@
       color: #000;
     }
 
+        /* --- Tooltip for SNN explanation --- */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: help;
+      border-bottom: 1px dotted #333;
+    }
+
+    .tooltip .tooltip-text {
+      visibility: hidden;
+      width: 240px;
+      background-color: #1a1a1a;
+      color: #fefefe;
+      text-align: left;
+      border-radius: 6px;
+      padding: 12px;
+      position: absolute;
+      z-index: 1;
+      bottom: 130%; 
+      left: 50%;
+      margin-left: -120px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      font-weight: 300;
+    }
+
+    .tooltip .tooltip-text::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #1a1a1a transparent transparent transparent;
+    }
+
+    .tooltip:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+    
     /* Section headers */
     h2 {
       font-size: 1.5rem;
@@ -366,7 +410,7 @@
     <main>
       <section id="mission">
         <div class="mission">
-          <p>Tama’s vision is to build <strong>intelligence</strong> that is energy efficient and embodied for our physical reality <strong>to support humanity in our endeavors</strong>. To enable this physical AI-powered future, Tama is creating <strong>spiking neural networks</strong> capable of perceiving and controlling its environment. Imagine augmenting manual machinery with intelligence—running cloudless on battery power alone.</p>
+          <p>Tama’s vision is to build <strong>intelligence</strong> that is energy efficient and embodied for our physical reality <strong>to support humanity in our endeavors</strong>. To enable this physical AI-powered future, Tama is creating <strong class="tooltip">spiking neural networks<span class="tooltip-text">Spiking Neural Networks (SNNs) are brain-inspired models that communicate using discrete events called 'spikes,' much like biological neurons. This allows them to process temporal data efficiently and operate with significantly less power.</span></strong> capable of perceiving and controlling its environment. Imagine augmenting manual machinery with intelligence—running cloudless on battery power alone.</p>
         </div>
       </section>
 
